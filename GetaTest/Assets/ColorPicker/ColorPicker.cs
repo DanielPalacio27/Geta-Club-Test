@@ -40,7 +40,7 @@ public class ColorPicker : MonoBehaviour {
 	Texture2D txColorDisplay;
 
 	string txtR, txtG, txtB, txtA;
-	float valR, valG, valB, valA;
+	float valR, valG, valB, valA;	
 	
 	public void NotifyColor(Color color)
 	{
@@ -147,7 +147,7 @@ public class ColorPicker : MonoBehaviour {
 				SelectedColor = TempColor;
 				if(receiver)
 				{
-					receiver.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
+					receiver.GetComponent<ObjectColor>().OnSetColorAction.Invoke(SelectedColor);
 				}
 			}
 
@@ -295,7 +295,8 @@ public class ColorPicker : MonoBehaviour {
 		SelectedColor = TempColor;
 		if(receiver)
 		{
-			receiver.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
+			receiver.GetComponent<ObjectColor>().OnSetColorAction.Invoke(SelectedColor);
+			//receiver.SendMessage(colorSetFunctionName, SelectedColor, SendMessageOptions.DontRequireReceiver);
 		}
 	}
 }

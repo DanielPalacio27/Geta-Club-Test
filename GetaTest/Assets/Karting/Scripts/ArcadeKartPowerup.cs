@@ -6,7 +6,7 @@ public class ArcadeKartPowerup : MonoBehaviour {
 
     public ArcadeKart.StatPowerup boostStats = new ArcadeKart.StatPowerup
     {
-        MaxTime = 5
+        MaxTime = 5,        
     };
 
     public bool isCoolingDown { get; private set; }
@@ -17,6 +17,7 @@ public class ArcadeKartPowerup : MonoBehaviour {
     public bool disableGameObjectWhenActivated;
     public UnityEvent onPowerupActivated;
     public UnityEvent onPowerupFinishCooldown;
+    protected GameObject otherGO = null;
 
     private void Awake()
     {
@@ -31,12 +32,11 @@ public class ArcadeKartPowerup : MonoBehaviour {
             if (Time.time - lastActivatedTimestamp > cooldown) {
                 //finished cooldown!
                 isCoolingDown = false;
-                onPowerupFinishCooldown.Invoke();
+                onPowerupFinishCooldown.Invoke();                
             }
 
         }
     }
-
 
     private void OnTriggerEnter(Collider other)
     {
@@ -51,6 +51,7 @@ public class ArcadeKartPowerup : MonoBehaviour {
             { 
                 lastActivatedTimestamp = Time.time;
                 kart.AddPowerup(this.boostStats);
+                otherGO = kart.gameObject;
                 onPowerupActivated.Invoke();
                 isCoolingDown = true;
 
