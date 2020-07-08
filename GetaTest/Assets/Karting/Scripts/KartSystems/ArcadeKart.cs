@@ -129,9 +129,9 @@ namespace KartGame.KartSystems
         bool canMove = true;
         List<StatPowerup> activePowerupList = new List<StatPowerup>();
         GameObject lastGroundCollided = null;
-        ArcadeKart.Stats finalStats;
+        protected ArcadeKart.Stats finalStats;
 
-        void Awake()
+        protected virtual void Awake()
         {
             Rigidbody = GetComponent<Rigidbody>();
             m_Inputs = GetComponents<IInput>();

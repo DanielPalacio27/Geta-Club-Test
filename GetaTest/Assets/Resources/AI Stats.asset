@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00daaf2963f9bc64bbb6f9515838558f, type: 3}
+  m_Name: AI Stats
+  m_EditorClassIdentifier: 
+  lowLevel:
+    TopSpeed: 8
+    Acceleration: 4
+    ReverseSpeed: 5
+    ReverseAcceleration: 5
+    AccelerationCurve: 0.8
+    Braking: 10
+    CoastingDrag: 4
+    Grip: 0.95
+    Steer: 5
+    AddedGravity: 1
+    Suspension: 0.2
+  mediumLevel:
+    TopSpeed: 10
+    Acceleration: 5
+    ReverseSpeed: 5
+    ReverseAcceleration: 5
+    AccelerationCurve: 0.8
+    Braking: 10
+    CoastingDrag: 4
+    Grip: 0.95
+    Steer: 5
+    AddedGravity: 1
+    Suspension: 0.2
+  hardLevel:
+    TopSpeed: 14
+    Acceleration: 7
+    ReverseSpeed: 7
+    ReverseAcceleration: 7
+    AccelerationCurve: 0.9
+    Braking: 12
+    CoastingDrag: 4
+    Grip: 0.95
+    Steer: 5
+    AddedGravity: 1
+    Suspension: 0.2
